@@ -1,2 +1,5 @@
 # dev_conf
-Install with: curl -Lks https://git.io/JIg55 | /bin/bash
+## To Install
+```bash
+curl -Lks https://git.io/JIg55 | /bin/bash
+```
