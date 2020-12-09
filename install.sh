@@ -45,6 +45,21 @@ echo "*****************************************************************"
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 
 echo "*****************************************************************"
+echo "* Fixes for zsh file permissions                                *"
+echo "*****************************************************************"
+
+chmod g-w,o-w /usr/local/share/zsh
+chmod g-w,o-w /usr/local/share/zsh/site-functions
+
+echo "*****************************************************************"
+echo "* Modify auto-generated .zshrc files with custom sources        *"
+echo "*****************************************************************"
+
+{ echo 'source .zshrc.local \nsource .zshrc.local.powerlevel10k_init'; cat .zshrc; } > .zshrc.new
+echo 'source .zshrc.local.powerlevel10k_postfix' >> .zshrc.new
+mv .zshrc{.new,}
+
+echo "*****************************************************************"
 echo "* Installing Google Cloud Toolkit Components                    *"
 echo "*****************************************************************"
 
@@ -57,17 +72,19 @@ gcloud components install -q \
 	app-engine-python \
 	app-engine-python-extras
 
-{ echo 'source .zshrc.local \nsource .zshrc.local.powerlevel10k_init'; cat .zshrc; } > .zshrc.new
-echo 'source .zshrc.local.powerlevel10k_postfix' >> .zshrc.new
-mv .zshrc{.new,}
-
-chmod g-w,o-w /usr/local/share/zsh
-chmod g-w,o-w /usr/local/share/zsh/site-functions
+echo "*****************************************************************"
+echo "* Write Apple defaults                                          *"
+echo "*****************************************************************"
 
 defaults write com.apple.finder AppleShowAllFiles YES
 defaults write com.apple.finder WarnOnEmptyTrash -bool false
 defaults write com.apple.finder CreateDesktop false
 killall finder
 
+echo "*****************************************************************"
+echo "* Add Firefox and Set as Default Browser                        *"
+echo "*****************************************************************"
+
 brew install --cask firefox-developer-edition
 open -a "Firefox Developer Edition" --args --make-default-browser
+
