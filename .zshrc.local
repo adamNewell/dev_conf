@@ -5,13 +5,10 @@ export GOPATH="/Users/adamnewell/code/golang/"
 export DISPLAY=:0.0
 
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/openjdk-13.jdk/Contents/Home
-export CLOUDSDK_PYTHON="/usr/local/opt/python@3.8/libexec/bin/python"
 
 source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
 source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
 
-OH_MY_CUSTOMIZATIONS="/Users/$(whoami)/code/shell/.shell-scripts"
-PATH=$PATH:$OH_MY_CUSTOMIZATIONS/commands
 PATH=$PATH:/usr/local/sbin
 PATH=$PATH:$GOPATH/bin
 PATH=$PATH:$HOME/.jenv/bin
@@ -26,13 +23,13 @@ zstyle ':completion:*:*:docker:*' option-stacking yes
 zstyle ':completion:*:*:docker-*:*' option-stacking yes
 
 # Create a folder for custom completions scripts
-fpath=($OH_MY_CUSTOMIZATIONS/completion $fpath)
+#fpath=($OH_MY_CUSTOMIZATIONS/completion $fpath)
 autoload -U compinit && compinit
 
 # Includes
 includes=(ssh aliases helpers plugins)
 
 for item in $includes; do
-    source $OH_MY_CUSTOMIZATIONS/zsh/.zshrc.local.$item
+    source .zshrc.local.$item
 done
 
