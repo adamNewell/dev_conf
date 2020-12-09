@@ -8,7 +8,7 @@ echo "*****************************************************************"
 echo "* Installing Homebrew and packages                              *"
 echo "*****************************************************************"
 
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh --create-dirs -o homebrew/install.sh)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 brew install --cask google-cloud-sdk
 brew install --cask jet brains-toolbox
