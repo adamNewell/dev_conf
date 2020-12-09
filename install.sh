@@ -11,8 +11,7 @@ echo "*****************************************************************"
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 brew install --cask google-cloud-sdk
-brew install --cask jet brains-toolbox
-brew install --cask firefox-developer-edition
+brew install --cask jetbrains-toolbox
 brew install --cask iterm2
 brew install --cask slack
 brew install --cask spotify
@@ -55,13 +54,17 @@ gcloud components install -q \
 	app-engine-python \
 	app-engine-python-extras
 
-{ echo 'source .zshrc.local/\nsource .zshrc.local.powerlevel10k_init'; cat .zshrc; } > .zshrc.new
+{ echo 'source .zshrc.local \nsource .zshrc.local.powerlevel10k_init'; cat .zshrc; } > .zshrc.new
 echo 'source .zshrc.local.powerlevel10k_postfix' >> .zshrc.new
 mv .zshrc{.new,}
+
+chmod g-w,o-w /usr/local/share/zsh
+chmod g-w,o-w /usr/local/share/zsh/site-functions
 
 defaults write com.apple.finder AppleShowAllFiles YES
 defaults write com.apple.finder WarnOnEmptyTrash -bool false
 defaults write com.apple.finder CreateDesktop false
 killall finder
 
+brew install --cask firefox-developer-edition
 open -a "Firefox Developer Edition" --args --make-default-browser
