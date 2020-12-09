@@ -1,2 +1,2 @@
 # dev_conf
-Install with: https://git.io/JIgQR
+Install with: curl -Lks https://git.io/JIgQR | /bin/bash
