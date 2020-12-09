@@ -59,3 +59,9 @@ gcloud components install -q \
 echo 'source .zshrc.local.powerlevel10k_postfix' >> .zshrc.new
 mv .zshrc{.new,}
 
+defaults write com.apple.finder AppleShowAllFiles YES
+defaults write com.apple.finder WarnOnEmptyTrash -bool false
+defaults write com.apple.finder CreateDesktop false
+killall finder
+
+open -a "Firefox Developer Edition" --args --make-default-browser
