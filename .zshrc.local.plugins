@@ -1,0 +1,9 @@
+plugins=(
+  git
+  osx 
+  web-search 
+  docker 
+  docker-compose 
+  golang 
+  urltools
+)

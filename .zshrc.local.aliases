@@ -1,0 +1,12 @@
+# List of helpful aliases
+alias sshconfig="vim ~/.ssh/config"
+alias vimconfig="vim ~/.vimrc"
+alias zshconfig="vim ~/code/shell/.shell-scripts/zsh/.zshrc.local"
+alias ohmyzsh="vim ~/.oh-my-zsh"
+alias ll="ls -alh"
+alias src="source ~/.zshrc"
+alias ggreset="ggpush && gcm && gbda"
+alias vim="mvim -v"
+alias pip="pip3"
+alias docker-images-update="docker images | grep -v REPOSITORY | awk '{print $1}' | xargs -L1 docker pull"
+alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
