@@ -1,5 +1,0 @@
-export SSH_KEY_PATH="~/.ssh/id_dsa"
-
-{ssh-add -D} &> /dev/null
-{ssh-add ~/.ssh/id_dsa} &>/dev/null
-{ssh-add ~/.ssh/github} &>/dev/null

@@ -13,6 +13,7 @@ echo "*****************************************************************"
 brew install --cask google-cloud-sdk
 brew install --cask jetbrains-toolbox
 brew install --cask iterm2
+brew install --cask postman
 brew install --cask slack
 brew install --cask spotify
 brew install --cask sublime-text
@@ -50,14 +51,6 @@ echo "*****************************************************************"
 
 chmod g-w,o-w /usr/local/share/zsh
 chmod g-w,o-w /usr/local/share/zsh/site-functions
-
-echo "*****************************************************************"
-echo "* Modify auto-generated .zshrc files with custom sources        *"
-echo "*****************************************************************"
-
-{ echo 'source .zshrc.local \nsource .zshrc.local.powerlevel10k_init'; cat .zshrc; } > .zshrc.new
-echo 'source .zshrc.local.powerlevel10k_postfix' >> .zshrc.new
-mv .zshrc{.new,}
 
 echo "*****************************************************************"
 echo "* Installing Google Cloud Toolkit Components                    *"
