@@ -21,6 +21,7 @@ brew install --cask tunnelblick
 
 brew install go
 brew install jq
+brew install pv
 
 brew tap homebrew/cask-fonts
 brew cask install font-hack-nerd-font
