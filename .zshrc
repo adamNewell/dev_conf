@@ -4,6 +4,7 @@ fi
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
 DISABLE_UPDATE_PROMPT="true"
+
 export UPDATE_ZSH_DAYS=7
 
 # Uncomment the following line if pasting URLs and other text is messed up.
@@ -13,13 +14,14 @@ export UPDATE_ZSH_DAYS=7
 # ENABLE_CORRECTION="true"
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/adamnewell/.oh-my-zsh"
-export TERM="xterm-256color" 
+export ZSH="/Users/$USER/.oh-my-zsh"
+export TERM="xterm-256color"
 export VISUAL="vim"
-export GOPATH="/Users/adamnewell/code/go/"
+export GOPATH="/Users/$USER/code/go/"
 
-source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
-source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
+GCLOUD_SDK_PATH="/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/
+[[ ! -f $GCLOUD_SDK_PATH/path.zsh.inc ]] || source $GCLOUD_SDK_PATH/path.zsh.inc 
+[[ ! -f $GCLOUD_SDK_PATH/completion.zsh.inc ]] || source $GCLOUD_SDK_PATH/completion.zsh.inc 
 
 # ZSH Completion
 zstyle ':completion:*' menu select=2
@@ -32,27 +34,27 @@ zstyle ':completion:*:*:docker-*:*' option-stacking yes
 
 plugins=(
   git
-  osx 
-  web-search 
-  docker 
-  docker-compose 
-  golang 
+  osx
+  web-search
+  docker
+  docker-compose
+  golang
   urltools
 )
 
 source $ZSH/oh-my-zsh.sh
 
-alias sshconfig="vim ~/.ssh/config"
-alias vimconfig="vim ~/.vimrc"
-alias zshconfig="vim ~/.zshrc"
-alias zsource="source ~/.zshrc"
-alias ohmyzsh="vim ~/.oh-my-zsh"
+alias sshconfig="vim $HOME/.ssh/config"
+alias vimconfig="vim $HOME/.vimrc"
+alias zshconfig="vim $HOME/.zshrc"
+alias zsource="source $HOME/.zshrc"
+alias ohmyzsh="vim $HOME/.oh-my-zsh"
 alias vim="mvim -v"
 alias pip="pip3"
 alias docker-images-update="docker images | grep -v REPOSITORY | awk '{print $1}' | xargs -L1 docker pull"
 alias config='/usr/bin/git --git-dir=$HOME/.dev_conf/ --work-tree=$HOME'
 
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+[[ ! -f $HOME/.p10k.zsh ]] || source $HOME/.p10k.zsh
 
 PATH=$PATH:/usr/local/sbin
 PATH=$PATH:$GOPATH/bin
