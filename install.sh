@@ -18,6 +18,7 @@ brew install --cask slack
 brew install --cask spotify
 brew install --cask sublime-text
 brew install --cask tunnelblick
+brew install --cask parallels
 
 brew install go
 brew install jq
@@ -74,9 +75,16 @@ echo "* Write Apple defaults                                          *"
 echo "*****************************************************************"
 
 defaults write com.apple.finder AppleShowAllFiles YES
-defaults write com.apple.finder WarnOnEmptyTrash -bool false
-defaults write com.apple.finder CreateDesktop false
-killall finder
+defaults write com.apple.finder WarnOnEmptyTrash -bool FALSE
+defaults write com.apple.finder CreateDesktop FALSE
+killall Finder
+
+defaults write com.apple.dock show-recents -bool FALSE
+defaults write com.apple.dock mru-spaces -bool FALSE
+killall Dock
+
+defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool TRUE
+defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode2 -bool TRUE
 
 echo "*****************************************************************"
 echo "* Add Firefox and Set as Default Browser                        *"
