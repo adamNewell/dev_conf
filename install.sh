@@ -87,6 +87,14 @@ defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool TRUE
 defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode2 -bool TRUE
 
 echo "*****************************************************************"
+echo "* Set git defaults                                              *"
+echo "*****************************************************************"
+
+echo "# ----------------------------------------------------------\n# Header - type(scope): Brief description\n# ----------------------------------------------------------\n#    * feat             A new feature - SemVar PATCH\n#    * fix              A bug fix - SemVar MINOR\n#    * BREAKING CHANGE  Breaking API change - SemVar MAJOR\n#    * docs             Change to documentation only\n#    * style            Change to style (whitespace, etc.)\n#    * refactor         Change not related to a bug or feat\n#    * perf             Change that affects performance\n#    * test             Change that adds/modifies tests\n#    * build            Change to build system\n#    * ci               Change to CI pipeline/workflow\n#    * chore            General tooling/config/min refactor\n# ----------------------------------------------------------\n\n\n# ----------------------------------------------------------\n# Body - More description, if necessary\n# ----------------------------------------------------------\n#    * Motivation behind changes, more detail into how\n#      functionality might be affected, etc.\n# ----------------------------------------------------------\n\n\n# ----------------------------------------------------------\n# Footer - Associated issues, PRs, etc.\n# ----------------------------------------------------------\n#    * Ex: Resolves Issue #207, see PR #15, etc.\n# ----------------------------------------------------------\n" > /Users/$(whoami)/git_commit.tmpl
+git config --global commit.template /Users/$(whoami)/git_commit.tmpl 
+git config --global core.editor="vim -v +16 +startinsert"
+
+echo "*****************************************************************"
 echo "* Add Firefox and Set as Default Browser                        *"
 echo "*****************************************************************"
 
