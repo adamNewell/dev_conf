@@ -15,14 +15,16 @@ brew install --cask jetbrains-toolbox
 brew install --cask iterm2
 brew install --cask postman
 brew install --cask slack
+brew install --cask microsoft-teams
 brew install --cask spotify
 brew install --cask sublime-text
 brew install --cask tunnelblick
 brew install --cask parallels
+brew install --cask airfoil
 
-brew install go
 brew install jq
 brew install pv
+brew install git
 
 brew tap homebrew/cask-fonts
 brew cask install font-hack-nerd-font
@@ -92,7 +94,7 @@ echo "*****************************************************************"
 
 cp git_commit.tmpl /Users/$(whoami)/git_commit.tmpl
 git config --global commit.template /Users/$(whoami)/git_commit.tmpl 
-git config --global core.editor="vim -v +16 +startinsert"
+git config --global core.editor "vim -v +16 +startinsert"
 
 echo "*****************************************************************"
 echo "* Add Firefox and Set as Default Browser                        *"
