@@ -10,6 +10,10 @@ echo "*****************************************************************"
 
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
+chmod u+w /usr/local/share/man/man8 \
+  /usr/local/share/zsh \
+  /usr/local/share/zsh/site-functions
+
 brew install --cask google-cloud-sdk
 brew install --cask jetbrains-toolbox
 brew install --cask iterm2
