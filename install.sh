@@ -100,6 +100,7 @@ echo "*****************************************************************"
 echo "* Add Firefox and Set as Default Browser                        *"
 echo "*****************************************************************"
 
+brew tap homebrew/cask-versions
 brew install --cask firefox-developer-edition
 open -a "Firefox Developer Edition" --args --make-default-browser
 
