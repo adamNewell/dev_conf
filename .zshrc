@@ -19,7 +19,7 @@ export TERM="xterm-256color"
 export VISUAL="vim"
 export GOPATH="/Users/$USER/code/go/"
 
-GCLOUD_SDK_PATH="/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/
+GCLOUD_SDK_PATH="/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/"
 [[ ! -f $GCLOUD_SDK_PATH/path.zsh.inc ]] || source $GCLOUD_SDK_PATH/path.zsh.inc 
 [[ ! -f $GCLOUD_SDK_PATH/completion.zsh.inc ]] || source $GCLOUD_SDK_PATH/completion.zsh.inc 
 
