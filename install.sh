@@ -28,6 +28,8 @@ brew install --cask airfoil
 
 brew install jq
 brew install pv
+brew install bash
+brew install bash-completion@2
 brew install git
 
 brew tap homebrew/cask-fonts
