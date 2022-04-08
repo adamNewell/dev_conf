@@ -10,6 +10,8 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 echo "------------------------------"
 echo "Augmenting Git with custom templates and variables"
 
-cp git_commit.tmpl /Users/$(whoami)/git_commit.tmpl
-git config --global commit.template /Users/$(whoami)/git_commit.tmpl
-git config --global core.editor "vim -v +16 +startinsert"
+read -r -p "Enter your global Git user name: " answer
+git config --global user.name "$answer"
+
+read -r -p "Enter your global Git email address: " answer
+git config --global user.email "$answer"
