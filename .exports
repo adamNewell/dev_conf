@@ -1,7 +1,6 @@
 # Make vim the default editor.
 export EDITOR='vim';
 
-ZSH_THEME="powerlevel10k/powerlevel10k"
 DISABLE_UPDATE_PROMPT="true"
 
 # Enable persistent REPL history for `node`.

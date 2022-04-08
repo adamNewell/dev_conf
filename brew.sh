@@ -21,7 +21,7 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 brew update
 
 # Upgrade any already-installed formulae.
-brew upgrade --all
+brew upgrade
 
 # Tap additional kegs
 brew tap homebrew/cask-versions
@@ -44,7 +44,7 @@ brew install gnu-sed
 
 # Install Bash 4.
 brew install bash
-brew install bash-completion2
+brew install bash-completion@2
 
 # Install Oh My ZSH
 brew install zsh
@@ -60,8 +60,7 @@ sudo bash -c 'echo /usr/local/bin/bash >> /etc/shells'
 chsh -s /usr/local/bin/bash
 
 # Install `wget` with IRI support.
-brew install wget --with-iri
-
+brew install wget
 
 # Install ruby-build and rbenv
 brew install ruby-build
@@ -70,10 +69,9 @@ LINE='eval "$(rbenv init -)"'
 grep -q "$LINE" ~/.extra || echo "$LINE" >> ~/.extra
 
 # Install more recent versions of some OS X tools.
-brew install vim --override-system-vi
-brew install homebrew/dupes/grep
-brew install homebrew/dupes/openssh
-brew install homebrew/dupes/screen
+brew install grep
+brew install openssh
+brew install screen
 
 # Install font tools.
 #brew tap bramstein/webfonttools
@@ -126,7 +124,7 @@ brew install macvim
 brew install jq
 
 # Core casks
-brew cask install --appdir="~/Applications" iterm2
+brew install --cask --appdir="~/Applications" iterm2
 
 # Development tool casks
 brew install --cask --appdir="/Applications" sublime-text
@@ -134,7 +132,6 @@ brew install --cask --appdir="/Applications" vagrant
 
 # Misc casks
 brew install --cask --appdir="/Applications" firefox-developer-edition
-brew install --cask --appdir="/Applications" skype
 brew install --cask --appdir="/Applications" slack
 
 brew install --cask --appdir="/Applications" jetbrains-toolbox
@@ -152,7 +149,7 @@ brew install --cask font-hack-nerd-font
 brew install docker
 
 # Install developer friendly quick look plugins; see https://github.com/sindresorhus/quick-look-plugins
-brew cask install qlcolorcode qlstephen qlmarkdown quicklook-json qlprettypatch quicklook-csv betterzip qlimagesize webpquicklook suspicious-package quicklookase qlvideo
+brew install --cask qlcolorcode qlstephen qlmarkdown quicklook-json qlprettypatch quicklook-csv betterzip qlimagesize webpquicklook suspicious-package quicklookase qlvideo
 
 # Install PowerLevel10K
 brew install romkatv/powerlevel10k/powerlevel10k

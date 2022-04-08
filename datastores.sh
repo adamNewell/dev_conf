@@ -15,6 +15,8 @@ if test ! $(which brew); then
   ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
 
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
 # Make sure we’re using the latest Homebrew.
 brew update
 
@@ -25,7 +27,7 @@ brew install postgresql
 # Install mysql workbench
 # Install Cask
 #brew install caskroom/cask/brew-cask
-#brew cask install --appdir="/Applications" mysqlworkbench
+#brew install --cask --appdir="/Applications" mysqlworkbench
 
 # Remove outdated versions from the cellar.
 brew cleanup

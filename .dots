@@ -16,7 +16,7 @@ function runDots() {
             echo "Syncing the dev-setup repo to your local machine."
             echo "------------------------------"
             echo ""
-            cd ~ && curl -#L https://github.com/donnemartin/dev-setup/tarball/master | tar -xzv --strip-components 1 --exclude={README.md,LICENSE}
+            cd ~ && curl -#L https://github.com/adamnewell/dev_conf/tarball/v2 | tar -xzv --strip-components 1 --exclude={README.md,LICENSE,.gitignore}
         fi
         if [ $ARG == "macosprep" ] || [ $ARG == "all" ]; then
             # Run the macosprep.sh Script
@@ -50,7 +50,7 @@ function runDots() {
             # SSD section.
             echo ""
             echo "------------------------------"
-            echo "Setting sensible OSX defaults."
+            echo "Setting sensible MacOS defaults."
             echo "------------------------------"
             echo ""
             ./macos.sh

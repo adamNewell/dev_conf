@@ -23,6 +23,8 @@ if test ! $(which brew); then
   ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
 
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
 echo "Setting up pyenv"
 brew install pyenv
 

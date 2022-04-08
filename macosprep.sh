@@ -13,6 +13,8 @@ echo "Updating MacOS.  If this requires a restart, run the script again."
 # Install all available updates
 sudo softwareupdate -ia --verbose
 
+sudo softwareupdate --install-rosetta
+
 # Install only recommended available updates
 #sudo softwareupdate -ir --verbose
 
